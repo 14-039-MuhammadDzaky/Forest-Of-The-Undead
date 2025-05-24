@@ -11,6 +11,11 @@ class Zombie(pygame.sprite.Sprite):
 
 		self.direction = choice((-1,1))
 		self.speed = 200
+		
+	def die(self):
+	        self.is_alive = False
+	        self.death_timer.activate()
+	        self.kill()
 
 	def reverse(self):
 		if not self.hit_timer.active:
@@ -19,11 +24,3 @@ class Zombie(pygame.sprite.Sprite):
 
 	def update(self, dt):
 		self.hit_timer.update()
-
-		# animate
-		self.frame_index += ANIMATION_SPEED * dt
-		self.image = self.frames[int(self.frame_index % len(self.frames))]
-		self.image = pygame.transform.flip(self.image, True, False) if self.direction < 0 else self.image
-
-		# move 
-		self.rect.x += self.direction * self.speed * dt
