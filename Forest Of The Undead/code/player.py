@@ -102,12 +102,9 @@ class Player(pygame.sprite.Sprite):
 
    def attack(self):
 
-	def animate(self, dt):
-		
-	def get_damage(self):
-		
-	def update(self, dt):
-		self.input()
-		self.move(dt)
-		
-		self.animate(dt)
+   def animate(self, dt):
+   def get_damage(self):
+   def update(self, dt):
+	   self.input()
+	   self.move(dt)
+	   self.animate(dt)
