@@ -48,12 +48,29 @@ class Overworld:
 			self.paths[end] = {'pos': pos, 'start': start}
 
 		# nodes & player 
+		icon_created = False
 		for obj in tmx_map.get_layer_by_name('Nodes'):
+			if obj.name == 'Node':
+				available_paths = {k:v for k,v in obj.properties.items() if k in ('left', 'right', 'up', 'down')}
+				node = Node(
+					pos = (obj.x, obj.y), 
+					surf = overworld_frames['path']['node'], 
+					groups = (self.all_sprites, self.node_sprites),
+					level = obj.properties['stage'],
+					data = self.data,
+					paths = available_paths)
+				
+				# buat icon di level saat ini
+				if obj.properties['stage'] == self.data.current_level:
+					self.icon = Icon((obj.x + TILE_SIZE / 2, obj.y + TILE_SIZE / 2), self.all_sprites, overworld_frames['icon'])
+					icon_created = True
 
-			# player
-			if obj.name == 'Node' and obj.properties['stage'] == self.data.current_level:
-				self.icon = Icon((obj.x + TILE_SIZE / 2, obj.y + TILE_SIZE / 2), self.all_sprites, overworld_frames['icon'])
-
+		# fallback: kalau icon tidak dibuat, pasang di node level 0
+		if not icon_created:
+			for node in self.node_sprites:
+				if node.level == 2:
+					self.icon = Icon((node.rect.centerx, node.rect.centery), self.all_sprites, overworld_frames['icon'])
+					break
 			# nodes 
 			if obj.name == 'Node':
 				available_paths = {k:v for k,v in obj.properties.items() if k in ('left', 'right', 'up', 'down')}
@@ -125,7 +142,7 @@ class Overworld:
 
 	def input(self):
 		keys = pygame.key.get_pressed()
-		if self.current_node and not self.icon.path:
+		if self.current_node and hasattr(self, 'icon') and not self.icon.path:
 			if keys[pygame.K_DOWN] and self.current_node.can_move('down'):
 				self.move('down')
 			if keys[pygame.K_LEFT] and self.current_node.can_move('left'):
@@ -150,6 +167,8 @@ class Overworld:
 			self.current_node = nodes[0]
 
 	def run(self, dt):
+		if not hasattr(self, 'icon'):
+			return
 		self.input()
 		self.get_current_node()
 		self.all_sprites.update(dt)
