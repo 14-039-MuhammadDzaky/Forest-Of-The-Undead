@@ -23,6 +23,9 @@ Kontributor Pengembangan Aplikasi
 
 Referensi dalam pembuatan proyrek ini:
 1. OpenGameArt.org
+2. craftpix.net
+3. gamedevmarket.net
+4. 
 
 
 
