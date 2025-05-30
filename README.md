@@ -1,4 +1,4 @@
-![objek diagram](https://github.com/user-attachments/assets/7ae40e15-9ce1-46e2-b78f-1de43331676c)# Forest-Of-The-Undead
+# Forest-Of-The-Undead
 Game ini merupakan game dengan kategori action-adventure, survival, dan platformer. Kategori action-adventure ini diambil karena, pemain akan mengalami eksplorasi, pertarungan dengan zombie dan penyihir yang merupakan penghuni dari hutan terkutuk. Dengan pemain yang bisa melawan musuh dan menghindari berbagai jebakan, maka terdapat elemen survival di dalam game. Platformer sebagai kategori game yang menjadikan mekanis dan navigasi yang presisi sehingga memberikan kesan gameplay yang responsif dan memuaskan
 
 game ini menggunakan library pygame dan juga pytmx untuk keperluan dalam game yang kami buat.
