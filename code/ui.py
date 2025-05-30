@@ -48,7 +48,7 @@ class UI:
         overlay = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 180))
         self.display_surface.blit(overlay, (0, 0))
-        self.big_font = pygame.font.Font(join('..', 'graphics', 'ui', 'runescape_uf.ttf'), 60)
+        self.big_font = pygame.font.Font(join('..', 'asset', 'ui', 'runescape_uf.ttf'), 60)
 
         game_over_text = self.big_font.render("Game Over", True, (255, 50, 50))
         game_over_rect = game_over_text.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT//2 - 100))
