@@ -9,3 +9,6 @@ Berikut cara menjalankan permainan kami:
 3. Setelah itu jalan kan file Play.bat pada folder code
 4. Game sudah bisa digunakan.
 
+
+![Screenshot 2025-05-30 155558](https://github.com/user-attachments/assets/44efe7d5-dffe-4bc4-b992-6f05f6a03e4f)
+
