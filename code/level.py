@@ -225,7 +225,7 @@ class Level:
 			if (target.rect.colliderect(self.player.rect)) and \
 			self.player.attacking and \
 			facing_target:
-				target.die()  
+				target.die()  # Lakukan aksi pada target
 
 	def check_constraint(self):
 		if self.player.hitbox_rect.left <= 0:
@@ -235,6 +235,7 @@ class Level:
 
 		if self.player.hitbox_rect.bottom > self.level_bottom:
 			self.switch_stage('overworld', -1)
+
 		if self.player.hitbox_rect.colliderect(self.level_finish_rect):
 			if self.level_unlock:
 				self.data.unlocked_level = self.level_unlock
