@@ -45,7 +45,7 @@ class AllSprites(pygame.sprite.Group):
 			'top': top_limit}
 		self.sky = not bg_tile
 		self.horizon_line = horizon_line
-		self.bg_image = import_image('..', 'graphics', 'level', 'bg', 'tiles', 'Background')
+		self.bg_image = import_image('..', 'asset', 'level', 'bg', 'tiles', 'Background')
 		self.bg_image = pygame.transform.scale(self.bg_image, (WINDOW_WIDTH, WINDOW_HEIGHT))  # optional scaling
 
 
