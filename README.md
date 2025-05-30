@@ -9,6 +9,10 @@ Berikut cara menjalankan permainan kami:
 3. Setelah itu jalan kan file Play.bat pada folder code
 4. Game sudah bisa digunakan.
 
+Cara lain, menggunakan folder ke dua atau cadangan.
+1. setelah install file github, silahkan ekstrak file Forest_Of_The_Undead
+2. jalankan file Mainkan.bat pada folder tersebut
+
 
 ![Screenshot 2025-05-30 155558](https://github.com/user-attachments/assets/44efe7d5-dffe-4bc4-b992-6f05f6a03e4f)
 
