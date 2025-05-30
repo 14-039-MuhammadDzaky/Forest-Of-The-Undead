@@ -239,7 +239,7 @@ class Level:
 			if self.level_unlock:
 				self.data.unlocked_level = self.level_unlock
 				self.data.current_level += 1
-				if self.data.current_level > 2:
+				if self.data.current_level == 3:
 					self.switch_stage('overworld', 1)
 				else:
 					self.switch_stage('level', self.data.current_level)
