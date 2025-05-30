@@ -12,7 +12,6 @@ Berikut cara menjalankan permainan kami:
 
 ![Screenshot 2025-05-30 155558](https://github.com/user-attachments/assets/44efe7d5-dffe-4bc4-b992-6f05f6a03e4f)
 
-![objek diagram](https://github.com/user-attachments/assets/220a2029-2653-4d61-9209-48075574db33)
 
 Kontributor Pengembangan Aplikasi
 1. Muhammad Dzaky_123140039       Programmer
