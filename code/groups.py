@@ -15,6 +15,7 @@ class WorldSprites(pygame.sprite.Group):
 		self.offset.x = -(target_pos[0] - WINDOW_WIDTH / 2)
 		self.offset.y = -(target_pos[1] - WINDOW_HEIGHT / 2)
 
+		# background
 		for sprite in sorted(self, key = lambda sprite: sprite.z):
 			if sprite.z < Z_LAYERS['main']:
 				if sprite.z == Z_LAYERS['path']:
@@ -22,7 +23,7 @@ class WorldSprites(pygame.sprite.Group):
 						self.display_surface.blit(sprite.image, sprite.rect.topleft + self.offset)
 				else:
 					self.display_surface.blit(sprite.image, sprite.rect.topleft + self.offset)
-		
+		# main
 		for sprite in sorted(self, key = lambda sprite: sprite.rect.centery):
 			if sprite.z == Z_LAYERS['main']:
 				if hasattr(sprite, 'icon'):
@@ -61,6 +62,7 @@ class AllSprites(pygame.sprite.Group):
 		self.offset.y = self.offset.y if self.offset.y > self.borders['bottom'] else self.borders['bottom']
 		self.offset.y = self.offset.y if self.offset.y < self.borders['top'] else self.borders['top']
 
+# BG
 	def background(self):
 		self.display_surface.blit(self.bg_image, (0, 0))
 
